@@ -4,7 +4,9 @@ import Alert from "./Components/Alert";
 import { Outlet } from "react-router-dom";
 
 function App() {
+  //mode variable for setting and applying light or dark mode within the app
   const [mode, setMode] = useState("light");
+  // show alert variable for getting and setting alerts for user actions
   const [alert, setAlert] = useState(null);
   const showAlert = (message, type) => {
     setAlert({
@@ -15,6 +17,8 @@ function App() {
       setAlert(null);
     }, 1000);
   };
+
+  // function that switches the styles based on the mode of the app
   const switchMode = () => {
     if (mode === "dark") {
       setMode("light");

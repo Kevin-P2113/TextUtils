@@ -5,6 +5,8 @@ import About from "./Components/About.jsx";
 import TextForm from "./Components/TextForm.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+
+// react router which has the app component and nested about and textform component
 const router = createBrowserRouter([
   {
     path: "/",

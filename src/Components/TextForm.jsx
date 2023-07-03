@@ -32,6 +32,7 @@ export default function TextForm(props) {
     myText.select();
     myText.setSelectionRange(0, 9999);
     navigator.clipboard.writeText(myText.value);
+    document.getSelection().removeAllRanges();
     showAlert("Text copied!", "success");
   };
   // function to remove extra spaces within the text
@@ -58,32 +59,52 @@ export default function TextForm(props) {
           ></textarea>
         </div>
 
-        <button className="btn btn-primary mx-1" onClick={handleUpClick}>
+        <button
+          className="btn btn-primary mx-1 my-1"
+          disabled={text.length === 0}
+          onClick={handleUpClick}
+        >
           Convert to Uppercase
         </button>
 
-        <button className="btn btn-primary mx-1" onClick={handleLowClick}>
+        <button
+          className="btn btn-primary mx-1 my-1"
+          disabled={text.length === 0}
+          onClick={handleLowClick}
+        >
           Convert to Lowercase
         </button>
 
-        <button className="btn btn-primary mx-1" onClick={handleClearClick}>
+        <button
+          className="btn btn-primary mx-1 my-1"
+          disabled={text.length === 0}
+          onClick={handleClearClick}
+        >
           Clear Text
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleCopy}>
+        <button
+          className="btn btn-primary mx-1 my-1"
+          disabled={text.length === 0}
+          onClick={handleCopy}
+        >
           Copy Text
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleExtraSpaces}>
+        <button
+          className="btn btn-primary mx-1 my-1"
+          disabled={text.length === 0}
+          onClick={handleExtraSpaces}
+        >
           Remove Extra Spaces
         </button>
       </div>
       <div className="container my-2">
         <h1>your text summary</h1>
         <p>
-          you have {text.split(" ").filter(Boolean).length} words and{" "}
+          you have {text.split(/\s+/).filter(Boolean).length} words and{" "}
           {text.split("").length} characters
         </p>
         <p>
-          Reading time: {(1 / 125) * text.split(" ").filter(Boolean).length}{" "}
+          Reading time: {(1 / 125) * text.split(/\s+/).filter(Boolean).length}{" "}
           minute(s)
         </p>
         <h2>Preview</h2>

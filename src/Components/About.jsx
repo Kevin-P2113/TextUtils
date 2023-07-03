@@ -21,7 +21,7 @@ export default function About(props) {
         className="container"
         style={mode == "light" ? lightStyle : darkStyle}
       >
-        <h1 className="my-3">About</h1>
+        <h1 className="my-3"><strong>About</strong></h1>
         <div
           className="accordion"
           id="accordionExample"
@@ -41,7 +41,7 @@ export default function About(props) {
                 aria-controls="collapseOne"
                 style={mode == "light" ? lightStyle : darkStyle}
               >
-                About me
+                <strong>About me</strong>
               </button>
             </h2>
             <div
@@ -75,7 +75,7 @@ export default function About(props) {
                 aria-controls="collapseTwo"
                 style={mode === "light" ? lightStyle : darkStyle}
               >
-                Text Manipulation App
+                <strong>Text Manipulation App</strong>
               </button>
             </h2>
             <div
@@ -108,7 +108,7 @@ export default function About(props) {
                 aria-controls="collapseThree"
                 style={mode === "light" ? lightStyle : darkStyle}
               >
-                Features
+                <strong>Features</strong>
               </button>
             </h2>
             <div
